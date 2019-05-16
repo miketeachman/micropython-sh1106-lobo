@@ -1,4 +1,7 @@
-# Driver for the SH1106 display
+# Driver for the SH1106 display customized to work on the LoBo ESP32 port
+This driver is a fork of repo https://github.com/robert-hh/SH1106 with changes needed
+to make it work on the Loboris ESP32 port (which introduced breaking changes in the I2C
+interface calls)
 
 This driver consists mostly of the work of Radomir Dopieralski (@deshipu).
 I added a few functions and changed the existing ones so it matches better

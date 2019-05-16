@@ -187,10 +187,12 @@ class SH1106_I2C(SH1106):
     def sw_write_data(self, buf):
         self.temp[0] = self.addr << 1
         self.temp[1] = 0x40  # Co=0, D/C#=1
+        self.i2c.begin(0)        
         self.i2c.start()
-        self.i2c.write(self.temp)
-        self.i2c.write(buf)
+        self.i2c.write_bytes(self.temp)
+        self.i2c.write_bytes(buf)
         self.i2c.stop()
+        self.i2c.end()
 
     def reset(self):
         super().reset(self.res)
